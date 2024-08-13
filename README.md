@@ -141,6 +141,12 @@ When integrating with an MQTT broker, you may encounter various error codes. Bel
 - **Incorrect Payload Format:** Ensure the incoming message adheres to the expected JSON structure.
 - **MQTT Error Codes:** Refer to the list of common error codes to diagnose and troubleshoot issues.
 
+
+#### Integration Testing
+
+Please refer to subscription and publisher folder readmes  inside cmd folder.
+
+
 #### Conclusion
 
 This document provides comprehensive guidance on integrating your application with the MQTT broker at `tcp://mqttbroker.instavision.ai:1883` using `device_id` as the username, `mcu_access_token` as the password, a custom client ID format `partnerID-clientid-spaceid-deviceid`.
