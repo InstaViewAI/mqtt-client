@@ -1,16 +1,16 @@
 ### Instavision MQTT 客户端集成
 
 #### 介绍
-本文件提供了将 MQTT 集成到位于 `tcp://mqttbroker.instavision.ai:1883` 的代理服务器的说明。集成包括使用 `device_id` 作为用户名，`mcu_access_token` 作为密码，采用自定义的客户端 ID 格式 `partnerID-clientid-spaceid-deviceid` 进行身份验证。
+本文件提供了将 MQTT 集成到位于 `tcp://mqttbroker.us.instavision.ai:1883` 的代理服务器的说明。集成包括使用 `device_id` 作为用户名，`mcu_access_token` 作为密码，采用自定义的客户端 ID 格式 `partnerID-clientid-spaceid-deviceid` 进行身份验证。
 
 #### 先决条件
-- 访问 MQTT 代理服务器 `tcp://mqttbroker.instavision.ai:1883` 的权限。
+- 访问 MQTT 代理服务器 `tcp://mqttbroker.us.instavision.ai:1883` 的权限。
 - 从固件 SDK 中获取有效的 `device_id` 和 `mcu_access_token` 以进行身份验证。
 - 提供方法来检索 `partnerID`、`spaceid`、`deviceid` 和 `thing_name` 的固件 SDK。
 - 用于 MQTT 通信的基于 C 的 MQTT 客户端。
 
 #### MQTT 代理服务器详情
-- **代理 URL:** `tcp://mqttbroker.instavision.ai:1883`
+- **代理 URL:** `tcp://mqttbroker.us.instavision.ai:1883`
 - **协议:** TCP
 - **端口:** 1883（非 SSL 连接的默认端口）
 - **Ping 超时:** `10 秒`
@@ -26,7 +26,7 @@
 import paho.mqtt.client as mqtt
 
 # 定义 MQTT 代理服务器详情
-broker_url = "mqttbroker.instavision.ai"
+broker_url = "mqttbroker.us.instavision.ai"
 broker_port = 1883
 
 # 定义身份验证凭据
@@ -142,4 +142,4 @@ client.disconnect()
 
 #### 结论
 
-本文件提供了将应用程序与位于 `tcp://mqttbroker.instavision.ai:1883` 的 MQTT 代理服务器集成的全面指南，使用 `device_id` 作为用户名，`mcu_access_token` 作为密码，自定义客户端 ID 格式 `partnerID-clientid-spaceid-deviceid`。
+本文件提供了将应用程序与位于 `tcp://mqttbroker.us.instavision.ai:1883` 的 MQTT 代理服务器集成的全面指南，使用 `device_id` 作为用户名，`mcu_access_token` 作为密码，自定义客户端 ID 格式 `partnerID-clientid-spaceid-deviceid`。
