@@ -1,15 +1,15 @@
 ### Instavision MQTT Client Integration 
 
 #### Introduction
-This document provides instructions on integrating MQTT with the broker at `tcp://mqttbroker.instavision.ai:1883`. The integration includes authentication using `device_id` as the username, `mcu_access_token` as the password, a custom client ID format `partnerID-clientid-spaceid-deviceid`
+This document provides instructions on integrating MQTT with the broker at `tcp://mqttbroker.us.instavision.ai:1883`. The integration includes authentication using `device_id` as the username, `mcu_access_token` as the password, a custom client ID format `partnerID-clientid-spaceid-deviceid`
 #### Prerequisites
-- Access to the MQTT broker at `tcp://mqttbroker.instavision.ai:1883`.
+- Access to the MQTT broker at `tcp://mqttbroker.us.instavision.ai:1883`.
 - A valid `device_id` and `mcu_access_token` retrived from firmware sdk for authentication.
 - Firmware SDK that provides methods to retrieve `partnerID`, `spaceid`, `deviceid`, and `thing_name`.
 - C-based MQTT client for the  MQTT communication.
 
 #### MQTT Broker Details
-- **Broker URL:** `tcp://mqttbroker.instavision.ai:1883`
+- **Broker URL:** `tcp://mqttbroker.us.instavision.ai:1883`
 - **Protocol:** TCP
 - **Port:** 1883 (default for non-SSL connections)
 - **Ping Timeout*** `10 seconds`
@@ -28,7 +28,7 @@ Before connecting to the MQTT broker, you need to retrieve the necessary identif
 import paho.mqtt.client as mqtt
 
 # Define the MQTT broker details
-broker_url = "mqttbroker.instavision.ai"
+broker_url = "mqttbroker.us.instavision.ai"
 broker_port = 1883
 
 # Define authentication credentials
@@ -149,4 +149,4 @@ Please refer to subscription and publisher folder readmes  inside cmd folder.
 
 #### Conclusion
 
-This document provides comprehensive guidance on integrating your application with the MQTT broker at `tcp://mqttbroker.instavision.ai:1883` using `device_id` as the username, `mcu_access_token` as the password, a custom client ID format `partnerID-clientid-spaceid-deviceid`.
+This document provides comprehensive guidance on integrating your application with the MQTT broker at `tcp://mqttbroker.us.instavision.ai:1883` using `device_id` as the username, `mcu_access_token` as the password, a custom client ID format `partnerID-clientid-spaceid-deviceid`.
