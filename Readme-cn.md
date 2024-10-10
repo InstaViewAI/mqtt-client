@@ -26,12 +26,12 @@
 import paho.mqtt.client as mqtt
 
 # 定义 MQTT 代理服务器详情
-broker_url = "mqttbroker.us.instavision.ai"
+broker_url = get_mcu_mqtt_url()
 broker_port = 1883
 
 # 定义身份验证凭据
 device_id = sdk.get_device_id()       # 从 SDK 中获取
-mcu_access_token = "your_mcu_access_token"  # 通常安全地存储在应用程序中
+mcu_access_token = get_mcu_access_token()  # 通常安全地存储在应用程序中
 
 # 定义自定义客户端 ID
 partnerID = sdk.get_partner_id()  # 从 SDK 中获取

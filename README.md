@@ -28,12 +28,12 @@ Before connecting to the MQTT broker, you need to retrieve the necessary identif
 import paho.mqtt.client as mqtt
 
 # Define the MQTT broker details
-broker_url = "mqttbroker.us.instavision.ai"
+broker_url = get_mcu_mqtt_url()
 broker_port = 1883
 
 # Define authentication credentials
 device_id = sdk.get_device_id()       # Retrieved from the SDK
-mcu_access_token = "your_mcu_access_token"  # Typically stored securely in your application
+mcu_access_token = get_mcu_access_token()  # Typically stored securely in your application
 
 # Define the custom client ID
 partnerID = sdk.get_partner_id()  # Retrieved from the SDK
