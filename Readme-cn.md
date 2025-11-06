@@ -40,7 +40,7 @@ spaceid = sdk.get_space_id()      # 从 SDK 中获取
 client_id = f"{partnerID}-{clientid}-{spaceid}-{device_id}"
 
 # 使用自定义客户端 ID 创建新的 MQTT 客户端实例
-client = mqtt.Client(client_id=client_id)
+client = mqtt.Client(client_id=client_id,clean_session=False)
 
 # 设置 device_id 和 mcu_access_token 进行身份验证
 client.username_pw_set(username=device_id, password=mcu_access_token)
@@ -56,6 +56,11 @@ client.connect(broker_url, broker_port)
 # 启动循环以处理网络流量和分发回调
 client.loop_start()
 ```
+
+#### 设置 Clean Start（清除会话）
+
+为了实现持久会话和消息投递保证，请将客户端配置为禁用 clean session（清除会话）：
+`client = mqtt.Client(client_id=client_id, clean_session=False)`
 
 #### 订阅唤醒命令主题
 

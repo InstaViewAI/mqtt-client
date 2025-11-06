@@ -42,7 +42,7 @@ spaceid = sdk.get_space_id()      # Retrieved from the SDK
 client_id = f"{partnerID}-{clientid}-{spaceid}-{device_id}"
 
 # Create a new MQTT client instance with the custom client ID
-client = mqtt.Client(client_id=client_id)
+client = mqtt.Client(client_id=client_id,clean_session=False)
 
 # Set the device_id and mcu_access_token for authentication
 client.username_pw_set(username=device_id, password=mcu_access_token)
@@ -58,6 +58,11 @@ client.connect(broker_url, broker_port)
 # Start the loop to process network traffic and dispatch callbacks
 client.loop_start()
 ```
+
+#### Setting Clean Start 
+
+For persistent sessions and message delivery guarantees, configure the client with clean session disabled :
+`client = mqtt.Client(client_id=client_id,clean_session=False)`
 
 #### Subscribing to the Wake-Up Command Topic
 
