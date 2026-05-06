@@ -97,10 +97,34 @@ client.subscribe(topic)
   "type": "WakeUP",
   "timestamp": 1678886400,
   "body": {
-    "deviceId": "<>"
+    "deviceId": "<>",
+    "reason": "string"
   }
 }
 ```
+
+**Body Fields:**
+
+| 字段 | 类型 | 描述 |
+|------|------|------|
+| `deviceId` | string | 目标设备的唯一标识符。 |
+| `reason` | string | 表示命令的来源或触发原因（可能的值见下表）。 |
+
+**`reason` 可能的值：**
+
+| 值 | 类别 | 描述 |
+|----|------|------|
+| `LiveViewStart` | 用户 / 控制 | 用户发起了实时查看会话。 |
+| `ChangeSettings` | 用户 / 控制 | 用户更改了设备设置。 |
+| `ArmDevice` | 用户 / 控制 | 用户启动了设备布防。 |
+| `DisarmDevice` | 用户 / 控制 | 用户解除了设备布防。 |
+| `OtaUpdate` | 用户 / 控制 | 触发了 OTA 固件更新。 |
+| `StopAlarm` | 事件 / 告警 | 请求停止当前活动的告警。 |
+| `EventAck` | 事件 / 告警 | 对事件的确认；触发设备上的警报器。 |
+| `LogLevel` | 事件 / 告警 | 请求更改日志级别。 |
+| `ReportGPS` | 遥测 | 设备应上报其 GPS 位置信息。 |
+| `ReportTemperature` | 遥测 | 设备应上报其温度数据。 |
+| `ReportHumidity` | 遥测 | 设备应上报其湿度数据。 |
 
 #### 从代理断开连接
 
