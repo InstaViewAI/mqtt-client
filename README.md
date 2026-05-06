@@ -99,10 +99,34 @@ When subscribing to the wake-up command topic, expect a payload in the following
   "type": "WakeUP",
   "timestamp": 1678886400,
   "body": {
-    "deviceId": "<>"
+    "deviceId": "<>",
+    "reason": "string"
   }
 }
 ```
+
+**Body Fields:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `deviceId` | string | The unique identifier of the target device. |
+| `reason` | string | Indicates the source or trigger of the command (see possible values below) |
+
+**Possible `reason` Values:**
+
+| Value | Category | Description |
+|-------|----------|-------------|
+| `LiveViewStart` | User / Control | User initiated a live view session. |
+| `ChangeSettings` | User / Control | User changed device settings. |
+| `ArmDevice` | User / Control | User armed the device. |
+| `DisarmDevice` | User / Control | User disarmed the device. |
+| `OtaUpdate` | User / Control | An OTA firmware update was triggered. |
+| `StopAlarm` | Event / Alarm | Request to stop an active alarm. |
+| `EventAck` | Event / Alarm | Acknowledgement of an event; triggers siren on device. |
+| `LogLevel` | Event / Alarm | Log level change requested. |
+| `ReportGPS` | Telemetry | Device should report its GPS location. |
+| `ReportTemperature` | Telemetry | Device should report its temperature reading. |
+| `ReportHumidity` | Telemetry | Device should report its humidity reading. |
 
 #### Disconnecting from the Broker
 
